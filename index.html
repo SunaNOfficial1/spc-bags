@@ -2,1512 +2,517 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#14233f">
-  <meta name="description" content="Discover your everyday college bag at SPSC Bags. Shop student style for ৳600 and order online.">
-  <title>SPSC Bags | Made for College Life</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --navy: #14233f;
-      --navy-light: #203554;
-      --blue: #3159c9;
-      --blue-light: #edf2ff;
-      --cream: #fbfaf7;
-      --white: #ffffff;
-      --text: #283449;
-      --muted: #737d8e;
-      --border: #e8eaf0;
-      --green: #138653;
-      --gold: #e8c985;
-      --radius: 20px;
-      --shadow: 0 12px 40px rgba(20, 35, 63, .07);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      font-family: "DM Sans", sans-serif;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, input, select, textarea {
-      font: inherit;
-    }
-
-    button, a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .container {
-      width: min(1120px, 90%);
-      margin-inline: auto;
-    }
-
-    .announcement {
-      background: var(--navy);
-      color: #fff;
-      text-align: center;
-      padding: 9px 15px;
-      font-size: 12px;
-      letter-spacing: .3px;
-    }
-
-    .announcement span {
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(251, 250, 247, .96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(14px);
-    }
-
-    .navbar {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-
-    .brand-mark {
-      width: 43px;
-      height: 43px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      background: var(--navy);
-      color: #fff;
-      font-size: 22px;
-    }
-
-    .brand-name {
-      font-family: "Manrope", sans-serif;
-      font-size: 19px;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: -.7px;
-      line-height: 1.2;
-    }
-
-    .brand-subtitle {
-      display: block;
-      font-size: 10px;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      margin-top: 3px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .nav-links > a:not(.btn) {
-      font-size: 13px;
-      font-weight: 600;
-      color: #536075;
-      transition: color .2s;
-    }
-
-    .nav-links > a:not(.btn):hover {
-      color: var(--blue);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 47px;
-      padding: 12px 21px;
-      border: 1px solid transparent;
-      border-radius: 11px;
-      font-size: 13px;
-      font-weight: 700;
-      text-align: center;
-      cursor: pointer;
-      transition: background .2s, transform .2s, box-shadow .2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: white;
-      background: var(--blue);
-      box-shadow: 0 6px 16px rgba(49, 89, 201, .15);
-    }
-
-    .btn-primary:hover {
-      background: #2448b0;
-      box-shadow: 0 9px 22px rgba(49, 89, 201, .2);
-    }
-
-    .btn-dark {
-      color: white;
-      background: var(--navy);
-    }
-
-    .btn-dark:hover {
-      background: var(--navy-light);
-    }
-
-    .btn-outline {
-      color: var(--navy);
-      background: transparent;
-      border-color: #d7dce5;
-    }
-
-    .btn-outline:hover {
-      background: white;
-      border-color: #aeb9cc;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.7px;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      display: inline-block;
-      width: 22px;
-      height: 2px;
-      background: var(--gold);
-    }
-
-    h1, h2, h3, h4 {
-      font-family: "Manrope", sans-serif;
-      color: var(--navy);
-      line-height: 1.25;
-    }
-
-    .hero {
-      padding: 76px 0 80px;
-      background:
-        radial-gradient(ellipse at 82% 20%, #e9efff 0%, transparent 35%),
-        var(--cream);
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.03fr .97fr;
-      align-items: center;
-      gap: 64px;
-    }
-
-    .hero h1 {
-      margin: 22px 0 20px;
-      font-size: clamp(38px, 5vw, 62px);
-      font-weight: 800;
-      letter-spacing: -2.8px;
-    }
-
-    .hero h1 .accent {
-      color: var(--blue);
-    }
-
-    .hero-description {
-      max-width: 480px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .hero-note {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      margin-top: 24px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .hero-note .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--green);
-    }
-
-    .hero-visual {
-      position: relative;
-      padding: 14px;
-    }
-
-    .image-frame {
-      position: relative;
-      padding: 24px;
-      background: #fff;
-      border: 1px solid rgba(20, 35, 63, .05);
-      border-radius: 28px;
-      box-shadow: 0 25px 70px rgba(20, 35, 63, .10);
-    }
-
-    .hero-image {
-      display: block;
-      width: 100%;
-      height: 400px;
-      object-fit: contain;
-      border-radius: 14px;
-      cursor: zoom-in;
-    }
-
-    .image-caption {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      margin-top: 18px;
-      padding-top: 17px;
-      border-top: 1px solid var(--border);
-    }
-
-    .image-caption strong {
-      color: var(--navy);
-      font-family: "Manrope", sans-serif;
-      font-size: 14px;
-    }
-
-    .image-caption span {
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .price-pill {
-      position: absolute;
-      top: -3px;
-      right: -7px;
-      padding: 12px 17px;
-      border: 3px solid var(--cream);
-      border-radius: 13px;
-      background: var(--navy);
-      color: white;
-      font-size: 14px;
-      font-weight: 800;
-      box-shadow: var(--shadow);
-    }
-
-    .trust-strip {
-      background: white;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      padding: 25px 0;
-    }
-
-    .trust-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      padding: 5px 15px;
-    }
-
-    .trust-item + .trust-item {
-      border-left: 1px solid var(--border);
-    }
-
-    .trust-icon {
-      font-size: 23px;
-    }
-
-    .trust-item strong {
-      display: block;
-      font-size: 12px;
-      color: var(--navy);
-    }
-
-    .trust-item small {
-      display: block;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .section {
-      padding: 82px 0;
-    }
-
-    .section-heading {
-      max-width: 610px;
-      margin: 0 auto 42px;
-      text-align: center;
-    }
-
-    .section-heading .eyebrow {
-      justify-content: center;
-    }
-
-    .section-heading h2 {
-      margin-top: 15px;
-      font-size: clamp(28px, 4vw, 40px);
-      letter-spacing: -1.3px;
-    }
-
-    .section-heading p {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .product-card {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 52px;
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: white;
-      box-shadow: var(--shadow);
-    }
-
-    .product-image {
-      display: grid;
-      place-items: center;
-      min-height: 340px;
-      padding: 25px;
-      background: #f5f6f9;
-      border-radius: 17px;
-    }
-
-    .product-image img {
-      display: block;
-      width: 100%;
-      height: 330px;
-      object-fit: contain;
-      border-radius: 10px;
-      cursor: zoom-in;
-    }
-
-    .product-info .tag {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 6px;
-      background: var(--blue-light);
-      color: var(--blue);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .product-info h3 {
-      margin-top: 17px;
-      font-size: clamp(26px, 3vw, 34px);
-      letter-spacing: -.8px;
-    }
-
-    .product-info p {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      margin: 25px 0;
-    }
-
-    .price {
-      color: var(--navy);
-      font-family: "Manrope", sans-serif;
-      font-size: 39px;
-      font-weight: 800;
-      letter-spacing: -1.5px;
-    }
-
-    .price-note {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .product-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .order-section {
-      background: #f0f3fa;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .form-shell {
-      max-width: 850px;
-      margin: auto;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 21px;
-      background: white;
-      box-shadow: var(--shadow);
-    }
-
-    .form-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 25px 28px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .form-top h3 {
-      font-size: 20px;
-    }
-
-    .form-top p {
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .form-price {
-      flex-shrink: 0;
-      color: var(--blue);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .google-form {
-      display: block;
-      width: 100%;
-      min-height: 900px;
-      border: 0;
-      background: white;
-    }
-
-    .form-fallback {
-      padding: 15px 20px 25px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .form-fallback a {
-      color: var(--blue);
-      font-weight: 700;
-      text-decoration: underline;
-    }
-
-    .payment-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .payment-card {
-      padding: 27px;
-      border: 1px solid var(--border);
-      border-radius: 19px;
-      background: white;
-      box-shadow: 0 7px 25px rgba(20, 35, 63, .035);
-    }
-
-    .payment-icon {
-      display: grid;
-      place-items: center;
-      width: 49px;
-      height: 49px;
-      margin-bottom: 19px;
-      border-radius: 14px;
-      background: var(--blue-light);
-      font-size: 23px;
-    }
-
-    .payment-card h3 {
-      font-size: 19px;
-    }
-
-    .payment-card p {
-      margin: 10px 0 19px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .number-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 13px;
-      border: 1px solid var(--border);
-      border-radius: 11px;
-      background: #fafbfe;
-    }
-
-    .number-box span {
-      overflow-wrap: anywhere;
-      color: var(--navy);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .copy-btn {
-      flex-shrink: 0;
-      padding: 8px 12px;
-      border: 0;
-      border-radius: 8px;
-      background: var(--navy);
-      color: white;
-      font-size: 11px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .copy-btn:hover {
-      background: var(--blue);
-    }
-
-    .payment-warning {
-      margin-top: 22px;
-      padding: 18px 20px;
-      border: 1px solid #f0e4c5;
-      border-radius: 12px;
-      background: #fffaf0;
-      color: #735a25;
-      font-size: 12px;
-      line-height: 1.9;
-    }
-
-    .payment-warning strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .contact-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 27px;
-    }
-
-    .faq-section {
-      background: #f3f5fa;
-    }
-
-    .faq-list {
-      display: grid;
-      gap: 12px;
-      max-width: 780px;
-      margin: auto;
-    }
-
-    details {
-      padding: 19px 22px;
-      border: 1px solid var(--border);
-      border-radius: 13px;
-      background: white;
-    }
-
-    summary {
-      position: relative;
-      padding-right: 25px;
-      color: var(--navy);
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      list-style: none;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary::after {
-      content: "+";
-      position: absolute;
-      right: 0;
-      top: -3px;
-      color: var(--blue);
-      font-size: 21px;
-      font-weight: 500;
-    }
-
-    details[open] summary::after {
-      content: "−";
-    }
-
-    details p {
-      padding-top: 12px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.9;
-    }
-
-    footer {
-      padding: 48px 0 22px;
-      background: var(--navy);
-      color: white;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 40px;
-      padding-bottom: 35px;
-    }
-
-    .footer-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
-      font-family: "Manrope", sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-    }
-
-    .footer-grid p {
-      max-width: 310px;
-      color: #c4cddd;
-      font-size: 12px;
-      line-height: 1.9;
-    }
-
-    .footer-grid h4 {
-      margin-bottom: 15px;
-      color: white;
-      font-size: 13px;
-    }
-
-    .footer-links {
-      display: grid;
-      gap: 9px;
-    }
-
-    .footer-links a {
-      color: #c4cddd;
-      font-size: 12px;
-      overflow-wrap: anywhere;
-    }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
-    .footer-bottom {
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, .14);
-      color: #c4cddd;
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .floating-whatsapp {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 40;
-      display: grid;
-      place-items: center;
-      width: 54px;
-      height: 54px;
-      border: 3px solid white;
-      border-radius: 50%;
-      background: #159b62;
-      color: white;
-      font-size: 25px;
-      box-shadow: 0 7px 24px rgba(0, 0, 0, .18);
-      transition: transform .2s;
-    }
-
-    .floating-whatsapp:hover {
-      transform: translateY(-3px);
-    }
-
-    .image-modal {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 25px;
-      background: rgba(9, 17, 33, .91);
-      cursor: zoom-out;
-    }
-
-    .image-modal.open {
-      display: flex;
-    }
-
-    .image-modal img {
-      max-width: min(900px, 100%);
-      max-height: 85vh;
-      object-fit: contain;
-      border-radius: 10px;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 18px;
-      right: 22px;
-      width: 44px;
-      height: 44px;
-      border: 1px solid rgba(255, 255, 255, .4);
-      border-radius: 50%;
-      background: transparent;
-      color: white;
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    :focus-visible {
-      outline: 3px solid #7194ff;
-      outline-offset: 4px;
-    }
-
-    @media (max-width: 800px) {
-      .navbar {
-        min-height: 70px;
-      }
-
-      .nav-links {
-        gap: 12px;
-      }
-
-      .nav-links > a:not(.btn) {
-        display: none;
-      }
-
-      .hero {
-        padding: 50px 0 60px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 38px;
-      }
-
-      .hero h1 {
-        max-width: 580px;
-      }
-
-      .hero-visual {
-        width: min(520px, 100%);
-        margin: auto;
-      }
-
-      .hero-image {
-        height: 330px;
-      }
-
-      .product-card {
-        gap: 28px;
-      }
-
-      .product-image {
-        min-height: 260px;
-      }
-
-      .product-image img {
-        height: 270px;
-      }
-
-      .footer-grid {
-        gap: 25px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .container {
-        width: 91%;
-      }
-
-      .brand-name {
-        font-size: 17px;
-      }
-
-      .brand-mark {
-        width: 39px;
-        height: 39px;
-      }
-
-      .nav-links .btn {
-        min-height: 41px;
-        padding: 10px 13px;
-        font-size: 11px;
-      }
-
-      .hero h1 {
-        font-size: clamp(37px, 10vw, 49px);
-        letter-spacing: -1.9px;
-      }
-
-      .hero-description {
-        font-size: 14px;
-      }
-
-      .hero-actions {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .hero-actions .btn,
-      .product-actions .btn {
-        width: 100%;
-      }
-
-      .image-frame {
-        padding: 13px;
-        border-radius: 20px;
-      }
-
-      .hero-image {
-        height: 275px;
-      }
-
-      .price-pill {
-        top: -10px;
-        right: -4px;
-        padding: 9px 12px;
-        font-size: 12px;
-      }
-
-      .trust-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
-        padding: 12px 0;
-      }
-
-      .trust-item {
-        justify-content: flex-start;
-        padding: 13px 8px;
-      }
-
-      .trust-item + .trust-item {
-        border-left: 0;
-        border-top: 1px solid var(--border);
-      }
-
-      .section {
-        padding: 58px 0;
-      }
-
-      .section-heading {
-        margin-bottom: 28px;
-      }
-
-      .product-card {
-        grid-template-columns: 1fr;
-        padding: 15px;
-        gap: 24px;
-        border-radius: 18px;
-      }
-
-      .product-image {
-        min-height: 230px;
-        padding: 14px;
-      }
-
-      .product-image img {
-        height: 250px;
-      }
-
-      .product-info {
-        padding: 3px 5px 8px;
-      }
-
-      .price {
-        font-size: 35px;
-      }
-
-      .form-top {
-        align-items: flex-start;
-        padding: 20px 16px;
-      }
-
-      .form-top h3 {
-        font-size: 17px;
-      }
-
-      .form-price {
-        font-size: 12px;
-      }
-
-      .google-form {
-        min-height: 950px;
-      }
-
-      .payment-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .payment-card {
-        padding: 21px;
-      }
-
-      .contact-actions {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 27px;
-      }
-
-      .floating-whatsapp {
-        right: 14px;
-        bottom: 14px;
-        width: 49px;
-        height: 49px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        transition: none !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17283f">
+<meta name="description" content="Shop college bags at SPSC Bags. View the product, check the price and order online.">
+<title>SPSC Bags | College Essentials</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:#17283f;
+  --navy2:#263b55;
+  --blue:#2864c8;
+  --light:#f3f5f8;
+  --white:#fff;
+  --text:#202c3d;
+  --muted:#687588;
+  --border:#e1e6ed;
+  --green:#12834d;
+  --gold:#ffd814;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth;scroll-padding-top:90px}
+body {
+  font-family:"DM Sans",Arial,sans-serif;
+  background:var(--light);color:var(--text);line-height:1.6;
+}
+a {text-decoration:none;color:inherit}
+button,input {font:inherit}
+button,a {touch-action:manipulation}
+.container {width:min(1180px,94%);margin:auto}
+.topbar {
+  background:var(--navy);color:white;padding:12px 0;
+}
+.nav {
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.logo {display:flex;align-items:center;gap:10px;min-width:150px}
+.logo-icon {
+  width:42px;height:42px;display:grid;place-items:center;
+  background:#ffffff18;border:1px solid #ffffff30;border-radius:10px;font-size:23px;
+}
+.logo strong {font-size:19px;letter-spacing:-.5px;display:block;line-height:1.2}
+.logo small {font-size:10px;color:#d5dfec;letter-spacing:1px}
+.search {
+  display:flex;flex:1;max-width:570px;min-width:100px;
+  background:white;border-radius:8px;overflow:hidden;
+}
+.search input {
+  min-width:0;width:100%;border:0;outline:0;padding:12px 14px;color:var(--text);
+}
+.search button {
+  background:var(--gold);border:0;padding:0 17px;cursor:pointer;font-size:18px;
+}
+.nav-contact {font-size:12px;color:white;white-space:nowrap}
+.subnav {background:var(--navy2);color:white}
+.subnav-inner {display:flex;gap:25px;padding:10px 0;overflow-x:auto;white-space:nowrap}
+.subnav a {font-size:12px;font-weight:600;color:#f1f4f8}
+.subnav a:hover {text-decoration:underline}
+main {padding-bottom:50px}
+.breadcrumb {font-size:12px;color:var(--muted);padding:17px 0}
+.hero {
+  background:#fff;border:1px solid var(--border);border-radius:12px;
+  padding:clamp(22px,4vw,48px);display:grid;
+  grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;
+}
+.eyebrow {
+  color:var(--blue);font-size:11px;font-weight:800;letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+h1,h2,h3 {color:var(--navy);line-height:1.25}
+h1 {font-size:clamp(32px,4.5vw,53px);letter-spacing:-1.8px;margin:14px 0}
+.hero p {font-size:14px;color:var(--muted);max-width:490px}
+.hero-actions {display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}
+.btn {
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 19px;border-radius:8px;border:1px solid transparent;
+  font-size:13px;font-weight:800;cursor:pointer;transition:background .2s;
+}
+.btn-primary {background:var(--gold);color:#17212d;border-color:#e6c214}
+.btn-primary:hover {background:#f3c900}
+.btn-blue {background:var(--blue);color:white}
+.btn-blue:hover {background:#1e4fa7}
+.btn-outline {border-color:#cbd3df;background:white;color:var(--navy)}
+.btn-outline:hover {background:#f5f7fa}
+.hero-photo {
+  padding:15px;background:#f7f8fa;border:1px solid var(--border);
+  border-radius:10px;text-align:center;
+}
+.hero-photo img {
+  display:block;width:100%;height:310px;object-fit:contain;cursor:zoom-in;
+}
+.photo-note {font-size:11px;color:var(--muted);margin-top:8px}
+.section {margin-top:26px}
+.section-head {
+  display:flex;align-items:center;justify-content:space-between;
+  gap:15px;margin-bottom:14px;
+}
+.section-head h2 {font-size:23px;letter-spacing:-.5px}
+.section-head p {font-size:12px;color:var(--muted)}
+.product-grid {
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;
+}
+.product-card {
+  background:white;border:1px solid var(--border);border-radius:10px;
+  padding:17px;min-width:0;display:flex;flex-direction:column;
+}
+.product-card:hover {border-color:#b7c7df}
+.product-card img {
+  width:100%;height:205px;object-fit:contain;background:#f8f9fb;
+  border-radius:7px;cursor:zoom-in;
+}
+.product-card h3 {font-size:17px;margin-top:14px}
+.product-card .description {font-size:12px;color:var(--muted);margin-top:6px}
+.price {font-size:26px;font-weight:800;color:var(--navy);margin:12px 0 2px}
+.stock-note {font-size:11px;color:var(--green);margin-bottom:13px}
+.product-card .btn {width:100%;margin-top:auto}
+.empty {display:none;background:white;padding:25px;border-radius:8px;color:var(--muted)}
+.info-grid {display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.info-card {
+  background:white;border:1px solid var(--border);border-radius:10px;padding:22px;
+}
+.info-card h3 {font-size:17px;margin-bottom:7px}
+.info-card p {font-size:12px;color:var(--muted);margin-bottom:15px}
+.copy-row {display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.copy-row strong {overflow-wrap:anywhere;font-size:15px}
+.copy {
+  background:#edf2f9;border:1px solid var(--border);border-radius:6px;
+  padding:7px 11px;font-size:11px;font-weight:800;cursor:pointer;
+}
+.warning {
+  background:#fff9e9;border:1px solid #f0dfac;border-radius:8px;
+  padding:16px 18px;margin-top:15px;font-size:12px;color:#665322;
+}
+.form-card {
+  background:white;border:1px solid var(--border);border-radius:10px;overflow:hidden;
+}
+.form-title {padding:21px;border-bottom:1px solid var(--border)}
+.form-title h2 {font-size:22px}
+.form-title p {font-size:12px;color:var(--muted);margin-top:5px}
+.google-form {display:block;width:100%;min-height:900px;border:0}
+.form-fallback {padding:15px;text-align:center;font-size:12px;color:var(--muted)}
+.form-fallback a {color:var(--blue);text-decoration:underline;font-weight:700}
+.faq-list {display:grid;gap:10px}
+details {background:white;border:1px solid var(--border);border-radius:8px;padding:16px}
+summary {cursor:pointer;color:var(--navy);font-size:13px;font-weight:800}
+details p {margin-top:10px;color:var(--muted);font-size:12px}
+footer {background:var(--navy);color:white;padding:32px 0 18px}
+.footer-grid {display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer h3,footer h4 {color:white;margin-bottom:9px}
+footer p,footer a {font-size:12px;color:#d0d9e6}
+.footer-links {display:grid;gap:7px}
+.footer-bottom {border-top:1px solid #ffffff25;margin-top:24px;padding-top:15px;text-align:center;font-size:11px;color:#c7d1df}
+.whatsapp {
+  position:fixed;right:17px;bottom:17px;z-index:10;
+  display:grid;place-items:center;width:51px;height:51px;
+  border-radius:50%;background:#168b52;color:white;font-size:23px;
+  border:2px solid white;box-shadow:0 4px 15px #0002;
+}
+.modal {
+  display:none;position:fixed;inset:0;z-index:100;
+  background:#07101de8;align-items:center;justify-content:center;padding:20px;
+}
+.modal.open {display:flex}
+.modal img {max-width:95%;max-height:85vh;object-fit:contain}
+.modal button {
+  position:absolute;top:15px;right:20px;background:white;border:0;
+  border-radius:50%;width:42px;height:42px;font-size:25px;cursor:pointer;
+}
+@media(max-width:760px) {
+  .nav {flex-wrap:wrap;gap:12px}
+  .logo {min-width:0}
+  .search {order:3;flex-basis:100%;max-width:none}
+  .nav-contact {font-size:11px}
+  .hero {grid-template-columns:1fr;gap:23px}
+  .hero-photo img {height:260px}
+  .product-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .product-card {padding:11px}
+  .product-card img {height:155px}
+  .product-card h3 {font-size:15px}
+  .product-card .price {font-size:22px}
+  .section-head h2 {font-size:20px}
+}
+@media(max-width:480px) {
+  .container {width:93%}
+  .nav-contact {display:none}
+  .logo strong {font-size:17px}
+  .subnav-inner {gap:20px}
+  .hero {padding:22px}
+  h1 {font-size:36px}
+  .hero-actions .btn {width:100%}
+  .product-grid {grid-template-columns:1fr}
+  .product-card {padding:16px}
+  .product-card img {height:230px}
+  .info-grid {grid-template-columns:1fr}
+  .footer-grid {grid-template-columns:1fr;gap:23px}
+  .google-form {min-height:950px}
+}
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto}
+  * {transition:none!important}
+}
+</style>
 </head>
 
 <body>
-  <div class="announcement">
-    Designed for everyday campus life <span> · </span> Shop for ৳600
-  </div>
-
-  <header>
-    <div class="container navbar">
-      <a class="brand" href="#home" aria-label="SPSC Bags home">
-        <span class="brand-mark">🎒</span>
-        <span class="brand-name">
-          SPSC BAGS
-          <span class="brand-subtitle">Everyday essentials</span>
+<header>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="logo" href="#home">
+        <span class="logo-icon">🎒</span>
+        <span>
+          <strong>SPSC BAGS</strong>
+          <small>COLLEGE ESSENTIALS</small>
         </span>
       </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#product">Our Bag</a>
-        <a href="#payment">Payment</a>
-        <a class="btn btn-primary" href="#order">Order Now ↗</a>
-      </nav>
+      <form class="search" id="searchForm" role="search">
+        <input id="searchInput" type="search"
+          placeholder="Search college bags..."
+          aria-label="Search products">
+        <button type="submit" aria-label="Search">⌕</button>
+      </form>
+
+      <a class="nav-contact" href="tel:+8801614073205">☎ 01614073205</a>
     </div>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">The college collection</span>
-
-          <h1>
-            Made for college.
-            <span class="accent">Styled for you.</span>
-          </h1>
-
-          <p class="hero-description">
-            Your everyday campus companion, thoughtfully presented
-            for student life. Explore the bag, check the price, and
-            place your order in just a few simple steps.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#order">
-              Order Your Bag <span aria-hidden="true">→</span>
-            </a>
-            <a class="btn btn-outline" href="#product">
-              Explore the Bag
-            </a>
-          </div>
-
-          <p class="hero-note">
-            <span class="dot"></span>
-            Clear pricing · Simple online ordering
-          </p>
-        </div>
-
-        <div class="hero-visual">
-          <div class="image-frame">
-            <img
-              class="hero-image zoomable"
-              src="bag.jpeg"
-              alt="SPSC Bags college bag"
-              fetchpriority="high"
-            >
-
-            <div class="image-caption">
-              <div>
-                <strong>Your everyday college bag</strong>
-                <br>
-                <span>Tap the photo to enlarge</span>
-              </div>
-              <span>01 / COLLECTION</span>
-            </div>
-          </div>
-
-          <div class="price-pill">৳600 only</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="trust-strip" aria-label="Shopping information">
-      <div class="container trust-grid">
-        <div class="trust-item">
-          <span class="trust-icon">🎓</span>
-          <div>
-            <strong>College focused</strong>
-            <small>Made for student life</small>
-          </div>
-        </div>
-
-        <div class="trust-item">
-          <span class="trust-icon">📝</span>
-          <div>
-            <strong>Easy ordering</strong>
-            <small>Submit the online form</small>
-          </div>
-        </div>
-
-        <div class="trust-item">
-          <span class="trust-icon">💳</span>
-          <div>
-            <strong>bKash information</strong>
-            <small>Payment details below</small>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="product">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">The featured piece</span>
-          <h2>One bag. Your everyday routine.</h2>
-          <p>
-            Take a closer look at our featured college bag.
-            Review the product photo and price before ordering.
-          </p>
-        </div>
-
-        <div class="product-card">
-          <div class="product-image">
-            <img
-              class="zoomable"
-              src="bag.jpeg"
-              alt="SPSC Bags featured product"
-              loading="lazy"
-            >
-          </div>
-
-          <div class="product-info">
-            <span class="tag">COLLEGE COLLECTION</span>
-
-            <h3>SPSC College Bag</h3>
-
-            <p>
-              A student-focused bag for your everyday campus routine.
-              Please check the product photo carefully before
-              confirming your order.
-            </p>
-
-            <div class="price-row">
-              <span class="price">৳600</span>
-              <span class="price-note">Listed price</span>
-            </div>
-
-            <div class="product-actions">
-              <a class="btn btn-primary" href="#order">
-                Place an Order →
-              </a>
-
-              <a
-                class="btn btn-outline"
-                href="https://wa.me/8801614073205"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp Us
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section order-section" id="order">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Your next step</span>
-          <h2>Place your order</h2>
-          <p>
-            Fill in the order form with accurate information.
-            Double-check your details before submitting.
-          </p>
-        </div>
-
-        <div class="form-shell">
-          <div class="form-top">
-            <div>
-              <h3>SPSC Bags Order Form</h3>
-              <p>Complete the form to submit your order.</p>
-            </div>
-            <span class="form-price">৳600</span>
-          </div>
-
-          <iframe
-            class="google-form"
-            src="https://docs.google.com/forms/d/e/1FAIpQLScZQdS0m8DWiNlEjFP0aeV_In5FUllS29SU6_GNBEsVoJdqog/viewform?embedded=true"
-            title="SPSC Bags online order form"
-            loading="lazy"
-          >
-            Your browser does not support embedded forms.
-          </iframe>
-
-          <div class="form-fallback">
-            Having trouble opening the form?
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLScZQdS0m8DWiNlEjFP0aeV_In5FUllS29SU6_GNBEsVoJdqog/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Open the order form in a new tab</a>.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="payment">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Before you order</span>
-          <h2>Payment & contact</h2>
-          <p>
-            Keep these details handy when completing your order.
-            Please verify payment instructions before sending money.
-          </p>
-        </div>
-
-        <div class="payment-grid">
-          <div class="payment-card">
-            <div class="payment-icon" aria-hidden="true">৳</div>
-            <h3>bKash payment</h3>
-            <p>
-              Use the listed number only according to the seller's
-              payment instructions. Confirm the amount before sending.
-            </p>
-
-            <div class="number-box">
-              <span id="bkashNumber">01714073205</span>
-              <button
-                class="copy-btn"
-                type="button"
-                onclick="copyText('bkashNumber', this)"
-              >Copy number</button>
-            </div>
-          </div>
-
-          <div class="payment-card">
-            <div class="payment-icon" aria-hidden="true">🎁</div>
-            <h3>Referral code</h3>
-            <p>
-              If your order form requests a referral code, enter
-              the following code.
-            </p>
-
-            <div class="number-box">
-              <span id="referralCode">avyro</span>
-              <button
-                class="copy-btn"
-                type="button"
-                onclick="copyText('referralCode', this)"
-              >Copy code</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="payment-warning">
-          <strong>Important ordering information</strong>
-          Fill in the form correctly; otherwise, your order may be
-          cancelled. A minimum advance payment is mandatory if required
-          by the seller. Confirm the amount and payment instructions
-          before making a transaction.
-        </div>
-
-        <div class="contact-actions">
-          <a
-            class="btn btn-primary"
-            href="https://wa.me/8801614073205"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Message us on WhatsApp
-          </a>
-
-          <a class="btn btn-outline" href="tel:+8801614073205">
-            Call 01614073205
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section faq-section" id="faq">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Need a hand?</span>
-          <h2>Frequently asked questions</h2>
-          <p>
-            Quick answers to help you complete your order confidently.
-          </p>
-        </div>
-
-        <div class="faq-list">
-          <details>
-            <summary>What is the listed price of the bag?</summary>
-            <p>
-              The price currently displayed on this website is ৳600.
-            </p>
-          </details>
-
-          <details>
-            <summary>How can I place an order?</summary>
-            <p>
-              Go to the Place Your Order section and complete the
-              embedded Google Form. If it does not load, use the
-              direct form link provided underneath it.
-            </p>
-          </details>
-
-          <details>
-            <summary>How can I contact SPSC Bags?</summary>
-            <p>
-              Call 01614073205 or message the same number through
-              WhatsApp using the contact buttons on this page.
-            </p>
-          </details>
-
-          <details>
-            <summary>Which bKash number is listed?</summary>
-            <p>
-              The listed bKash number is 01714073205. Verify the
-              payment instructions before making a transaction.
-            </p>
-          </details>
-
-          <details>
-            <summary>Can I enlarge the product photo?</summary>
-            <p>
-              Yes. Tap either product photo to open a larger view.
-              Tap outside the image or press Escape to close it.
-            </p>
-          </details>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">🎒 SPSC BAGS</div>
-          <p>
-            A simple, student-focused bag page designed to make
-            browsing and ordering easier.
-          </p>
-        </div>
-
-        <div>
-          <h4>Explore</h4>
-          <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#product">Our Bag</a>
-            <a href="#order">Place an Order</a>
-            <a href="#payment">Payment Details</a>
-            <a href="#faq">FAQs</a>
-          </div>
-        </div>
-
-        <div>
-          <h4>Get in touch</h4>
-          <div class="footer-links">
-            <a href="tel:+8801614073205">Call: 01614073205</a>
-            <a
-              href="https://wa.me/8801614073205"
-              target="_blank"
-              rel="noopener noreferrer"
-            >WhatsApp us</a>
-            <a href="#payment">bKash: 01714073205</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        © <span id="year"></span> SPSC Bags. All rights reserved.
-      </div>
-    </div>
-  </footer>
-
-  <a
-    class="floating-whatsapp"
-    href="https://wa.me/8801614073205"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contact SPSC Bags on WhatsApp"
-    title="Chat on WhatsApp"
-  >✆</a>
-
-  <div
-    class="image-modal"
-    id="imageModal"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Enlarged product photo"
-    aria-hidden="true"
-  >
-    <button
-      class="modal-close"
-      type="button"
-      aria-label="Close enlarged image"
-      onclick="closeImage()"
-    >×</button>
-    <img id="modalImage" src="" alt="Enlarged college bag photo">
   </div>
 
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+  <nav class="subnav" aria-label="Main navigation">
+    <div class="container subnav-inner">
+      <a href="#home">☰ Home</a>
+      <a href="#products">College Bags</a>
+      <a href="#order">Place an Order</a>
+      <a href="#payment">Payment</a>
+      <a href="#faq">Help & FAQs</a>
+    </div>
+  </nav>
+</header>
 
-    async function copyText(elementId, button) {
-      const text = document
-        .getElementById(elementId)
-        .textContent.trim();
+<main class="container" id="home">
+  <div class="breadcrumb">Home › College Essentials › Bags</div>
 
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(text);
-        } else {
-          const input = document.createElement("textarea");
-          input.value = text;
-          input.style.position = "fixed";
-          input.style.opacity = "0";
-          document.body.appendChild(input);
-          input.select();
+  <section class="hero">
+    <div>
+      <span class="eyebrow">The college collection</span>
+      <h1>Find your everyday college bag.</h1>
+      <p>
+        A simple way to explore our featured bag, check the listed
+        price and place your order online. Everything you need is
+        right here.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#products">Explore the bag ↓</a>
+        <a class="btn btn-outline" href="#order">Order information</a>
+      </div>
+    </div>
 
-          const copied = document.execCommand("copy");
-          input.remove();
+    <div class="hero-photo">
+      <img src="bag.jpeg" alt="SPSC college bag"
+        class="zoomable" fetchpriority="high">
+      <p class="photo-note">View the product photo · Tap to enlarge</p>
+    </div>
+  </section>
 
-          if (!copied) {
-            throw new Error("Copy unavailable");
-          }
-        }
+  <section class="section" id="products">
+    <div class="section-head">
+      <div>
+        <h2>College bags</h2>
+        <p>Our currently listed product</p>
+      </div>
+      <p id="resultCount">1 product</p>
+    </div>
 
-        const originalText = button.textContent;
-        button.textContent = "Copied!";
+    <div class="product-grid" id="productGrid">
+      <article class="product-card" data-search="spsc college student bag backpack">
+        <img src="bag.jpeg" alt="SPSC college bag product photo"
+          class="zoomable" loading="lazy">
+        <h3>SPSC College Bag</h3>
+        <p class="description">A bag for your everyday college routine.</p>
+        <div class="price">৳600</div>
+        <p class="stock-note">Listed price</p>
+        <a class="btn btn-primary" href="#order">View details & order</a>
+      </article>
+    </div>
 
-        setTimeout(function () {
-          button.textContent = originalText;
-        }, 1500);
-      } catch (error) {
-        window.prompt("Copy this text:", text);
-      }
+    <div class="empty" id="noResults">
+      No matching products found. Try searching for “bag” or “college”.
+    </div>
+  </section>
+
+  <section class="section" id="order">
+    <div class="section-head">
+      <div>
+        <h2>Place your order</h2>
+        <p>Complete the form with accurate information.</p>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-title">
+        <h2>SPSC Bags Order Form</h2>
+        <p>Listed product price: ৳600</p>
+      </div>
+
+      <iframe class="google-form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLScZQdS0m8DWiNlEjFP0aeV_In5FUllS29SU6_GNBEsVoJdqog/viewform?embedded=true"
+        title="SPSC Bags order form" loading="lazy">
+        Your browser does not support embedded forms.
+      </iframe>
+
+      <div class="form-fallback">
+        If the form does not load,
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScZQdS0m8DWiNlEjFP0aeV_In5FUllS29SU6_GNBEsVoJdqog/viewform"
+          target="_blank" rel="noopener noreferrer">open it in a new tab</a>.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="payment">
+    <div class="section-head">
+      <div>
+        <h2>Payment information</h2>
+        <p>Check the details before making a payment.</p>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>📱 bKash number</h3>
+        <p>Verify the seller's payment instructions before sending money.</p>
+        <div class="copy-row">
+          <strong id="bkashNumber">01714073205</strong>
+          <button class="copy" onclick="copyValue('bkashNumber',this)">Copy</button>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h3>🎁 Referral code</h3>
+        <p>Enter this code if requested by the order form.</p>
+        <div class="copy-row">
+          <strong id="referralCode">avyro</strong>
+          <button class="copy" onclick="copyValue('referralCode',this)">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning">
+      <strong>Before confirming your order:</strong>
+      Fill in the form correctly or your order may be cancelled.
+      If an advance payment is required, confirm the amount and
+      instructions with the seller first.
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn btn-blue" href="https://wa.me/8801614073205"
+        target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+      <a class="btn btn-outline" href="tel:+8801614073205">Call 01614073205</a>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="section-head">
+      <div>
+        <h2>Help & FAQs</h2>
+        <p>Quick answers about ordering.</p>
+      </div>
+    </div>
+
+    <div class="faq-list">
+      <details>
+        <summary>What is the price of the bag?</summary>
+        <p>The currently listed price is ৳600.</p>
+      </details>
+      <details>
+        <summary>How do I place an order?</summary>
+        <p>Complete the Google Form in the order section. If it does not load, use the direct link below the form.</p>
+      </details>
+      <details>
+        <summary>How can I contact the seller?</summary>
+        <p>Call 01614073205 or use the WhatsApp contact button.</p>
+      </details>
+      <details>
+        <summary>Can I enlarge the product photo?</summary>
+        <p>Yes. Tap the product photo. Tap outside it or press Escape to close the enlarged view.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>🎒 SPSC BAGS</h3>
+        <p>College essentials, simple product browsing and straightforward online ordering.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#products">College Bags</a>
+          <a href="#order">Place an Order</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-links">
+          <a href="tel:+8801614073205">01614073205</a>
+          <a href="https://wa.me/8801614073205"
+            target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="#payment">Payment details</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> SPSC Bags. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/8801614073205"
+  target="_blank" rel="noopener noreferrer" aria-label="WhatsApp us">✆</a>
+
+<div class="modal" id="imageModal" role="dialog"
+  aria-modal="true" aria-label="Product photo enlarged">
+  <button type="button" onclick="closeModal()" aria-label="Close image">×</button>
+  <img id="modalImage" src="" alt="Enlarged college bag">
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const searchInput = document.getElementById("searchInput");
+const cards = [...document.querySelectorAll(".product-card")];
+const noResults = document.getElementById("noResults");
+const resultCount = document.getElementById("resultCount");
+
+function filterProducts() {
+  const query = searchInput.value.trim().toLowerCase();
+  let count = 0;
+
+  cards.forEach(function(card) {
+    const matches = card.dataset.search.includes(query);
+    card.style.display = matches ? "flex" : "none";
+    if (matches) count++;
+  });
+
+  noResults.style.display = count ? "none" : "block";
+  resultCount.textContent = count + (count === 1 ? " product" : " products");
+}
+
+document.getElementById("searchForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  filterProducts();
+  document.getElementById("products").scrollIntoView({behavior:"smooth"});
+});
+
+searchInput.addEventListener("input", filterProducts);
+
+async function copyValue(id, button) {
+  const value = document.getElementById(id).textContent.trim();
+
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(value);
+    } else {
+      const area = document.createElement("textarea");
+      area.value = value;
+      area.style.position = "fixed";
+      area.style.opacity = "0";
+      document.body.appendChild(area);
+      area.select();
+      const success = document.execCommand("copy");
+      area.remove();
+      if (!success) throw new Error("Copy failed");
     }
 
-    const imageModal = document.getElementById("imageModal");
-    const modalImage = document.getElementById("modalImage");
+    const old = button.textContent;
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = old, 1500);
+  } catch (error) {
+    window.prompt("Copy this text:", value);
+  }
+}
 
-    document.querySelectorAll(".zoomable").forEach(function (img) {
-      img.addEventListener("click", function () {
-        modalImage.src = img.src;
-        modalImage.alt = img.alt;
-        imageModal.classList.add("open");
-        imageModal.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-        document.querySelector(".modal-close").focus();
-      });
-    });
+const modal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
 
-    function closeImage() {
-      imageModal.classList.remove("open");
-      imageModal.setAttribute("aria-hidden", "true");
-      modalImage.src = "";
-      document.body.style.overflow = "";
-    }
+document.querySelectorAll(".zoomable").forEach(function(img) {
+  img.addEventListener("click", function() {
+    modalImage.src = img.src;
+    modalImage.alt = img.alt;
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+  });
+});
 
-    imageModal.addEventListener("click", function (event) {
-      if (event.target === imageModal) {
-        closeImage();
-      }
-    });
+function closeModal() {
+  modal.classList.remove("open");
+  modalImage.src = "";
+  document.body.style.overflow = "";
+}
 
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && imageModal.classList.contains("open")) {
-        closeImage();
-      }
-    });
-  </script>
+modal.addEventListener("click", function(event) {
+  if (event.target === modal) closeModal();
+});
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") closeModal();
+});
+</script>
 </body>
 </html>
