@@ -1,159 +1,1047 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101c3a">
+  <title>SPSC Bags | Smart Style for Students</title>
 
-  <title>SPSC Bags</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    :root {
+      --navy: #101c3a;
+      --blue: #2855d9;
+      --sky: #eaf1ff;
+      --yellow: #ffd166;
+      --white: #ffffff;
+      --text: #202b43;
+      --muted: #69758b;
+      --green: #159b62;
+      --shadow: 0 12px 35px rgba(16, 28, 58, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      text-align: center;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: #f7f9ff;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
     }
 
     .container {
-      max-width: 600px;
+      width: min(1120px, 92%);
       margin: auto;
-      padding: 25px 15px;
     }
 
-    h1 {
-      margin-bottom: 5px;
+    /* Announcement bar */
+    .announcement {
+      background: var(--yellow);
+      color: var(--navy);
+      text-align: center;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 700;
     }
 
-    .product {
+    /* Navigation */
+    header {
+      background: rgba(255, 255, 255, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #e9edf7;
+      backdrop-filter: blur(12px);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--navy);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-icon {
+      width: 43px;
+      height: 43px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--navy);
+      color: white;
+      font-size: 23px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border: none;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 9px 22px rgba(16, 28, 58, 0.14);
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+    }
+
+    .btn-yellow {
+      background: var(--yellow);
+      color: var(--navy);
+    }
+
+    .btn-outline {
+      border: 1px solid #d9e1f2;
       background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      color: var(--navy);
     }
 
-    .product img {
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 75px 0 82px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(255, 209, 102, 0.28), transparent 24%),
+        radial-gradient(circle at 10% 90%, rgba(76, 123, 255, 0.22), transparent 28%),
+        linear-gradient(135deg, #edf3ff 0%, #ffffff 58%, #eaf0ff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border-radius: 30px;
+      background: #ffffff;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 5px 20px rgba(16, 28, 58, 0.06);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(35px, 5vw, 58px);
+      line-height: 1.17;
+      letter-spacing: -2px;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 510px;
+      margin-bottom: 27px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      margin-top: 23px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero-visual {
+      position: relative;
+      padding: 20px;
+    }
+
+    .image-frame {
+      position: relative;
+      background: white;
+      border-radius: 30px;
+      padding: 15px;
+      box-shadow: 0 25px 70px rgba(16, 28, 58, 0.16);
+      transform: rotate(1deg);
+    }
+
+    .image-frame img {
+      display: block;
       width: 100%;
-      max-width: 450px;
-      border-radius: 10px;
+      max-height: 430px;
+      object-fit: contain;
+      border-radius: 20px;
+    }
+
+    .floating-label {
+      position: absolute;
+      background: white;
+      border-radius: 15px;
+      padding: 12px 16px;
+      box-shadow: var(--shadow);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .floating-label.top {
+      top: 0;
+      right: -5px;
+    }
+
+    .floating-label.bottom {
+      bottom: 0;
+      left: -7px;
+    }
+
+    /* Benefits */
+    .benefits {
+      padding: 25px 0;
+      background: var(--navy);
+      color: white;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .benefit-icon {
+      font-size: 25px;
+    }
+
+    /* Shared section styles */
+    section.content-section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 38px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 12px;
+      background: var(--sky);
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(27px, 4vw, 39px);
+      line-height: 1.3;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Product card */
+    .product-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 45px;
+      background: white;
+      padding: 30px;
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      border: 1px solid #edf0f7;
+    }
+
+    .product-image {
+      background: #f1f5ff;
+      border-radius: 21px;
+      min-height: 330px;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .product-image img {
+      max-width: 100%;
+      max-height: 390px;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 14px;
+    }
+
+    .product-info h3 {
+      font-size: 29px;
+      line-height: 1.3;
+      color: var(--navy);
+      margin: 13px 0;
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e8f8ef;
+      color: #087644;
+      border-radius: 30px;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 23px;
     }
 
     .price {
-      font-size: 25px;
-      font-weight: bold;
-      margin: 15px;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: -1px;
     }
 
-    .button {
-      display: inline-block;
-      padding: 13px 25px;
-      margin: 8px;
-      border-radius: 8px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
+    .price-note {
+      font-size: 12px;
+      color: var(--muted);
     }
 
-    .order {
-      background: #111;
+    .product-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .whatsapp {
-      background: #25D366;
+    /* Order form */
+    .order-section {
+      background: linear-gradient(180deg, #edf3ff, #f7f9ff);
     }
 
-    .call {
-      background: #007bff;
-    }
-
-    .form-section {
-      margin-top: 30px;
+    .form-shell {
       background: white;
-      padding: 10px;
-      border-radius: 15px;
+      border-radius: 24px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid #e8edf7;
+      overflow: hidden;
     }
 
-    iframe {
+    .form-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 10px 12px 18px;
+    }
+
+    .form-top h3 {
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .form-top p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .google-form {
+      display: block;
       width: 100%;
-      height: 850px;
+      min-height: 850px;
       border: none;
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .form-fallback {
+      text-align: center;
+      padding: 15px 10px 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .form-fallback a {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    /* Payment */
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .payment-card {
+      background: white;
+      padding: 27px;
+      border-radius: 21px;
+      border: 1px solid #e9edf7;
+      box-shadow: 0 8px 28px rgba(16, 28, 58, 0.05);
+    }
+
+    .payment-card .payment-icon {
+      width: 53px;
+      height: 53px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--sky);
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .payment-card h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .payment-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .number-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background: #f5f7fc;
+      border-radius: 12px;
+      padding: 12px 14px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .copy-btn {
+      border: none;
+      border-radius: 8px;
+      background: var(--blue);
+      color: white;
+      padding: 7px 11px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .payment-warning {
+      margin-top: 22px;
+      padding: 17px 20px;
+      background: #fff7df;
+      color: #74530a;
+      border-radius: 14px;
+      font-size: 13px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      gap: 13px;
+    }
+
+    details {
+      background: white;
+      padding: 19px 21px;
+      border-radius: 15px;
+      border: 1px solid #e8edf7;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    details p {
+      padding-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: white;
+      padding: 43px 0 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 30px;
+    }
+
+    .footer-brand {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    footer p, footer a {
+      color: #cbd5ee;
+      font-size: 12px;
+    }
+
+    footer h4 {
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 18px;
+      text-align: center;
+      color: #cbd5ee;
+      font-size: 11px;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 90;
+      width: 57px;
+      height: 57px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #20bd68;
+      color: white;
+      font-size: 27px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a:not(.btn) {
+        display: none;
+      }
+
+      .hero {
+        padding: 48px 0 58px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-visual {
+        width: min(500px, 100%);
+        margin: auto;
+      }
+
+      .product-card {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 20px;
+      }
+
+      .product-image {
+        min-height: 260px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .navbar {
+        min-height: 67px;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .brand-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .nav-links .btn {
+        padding: 10px 13px;
+        font-size: 12px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.2px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      section.content-section {
+        padding: 52px 0;
+      }
+
+      .payment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-shell {
+        padding: 8px;
+      }
+
+      .google-form {
+        min-height: 900px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .footer-grid > div:first-child {
+        grid-column: auto;
+      }
+
+      .floating-whatsapp {
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-
-    <h1>SPSC Bags</h1>
-    <p>Premium SPSC Side Bag</p>
-
-    <div class="product">
-
-      <img src="bag.jpeg" alt="SPSC Side Bag">
-
-      <div class="price">৳600</div>
-
-      <a
-        class="button order"
-        href="#order">
-        Order Now
-      </a>
-
-      <a
-        class="button whatsapp"
-        href="https://wa.me/8801614073205"
-        target="_blank">
-        WhatsApp
-      </a>
-
-      <a
-        class="button call"
-        href="tel:+8801614073205">
-        Call
-      </a>
-
-    </div>
-
-<div style="margin-top:25px; padding:22px; background:#fff; border:2px solid #c2185b; border-radius:15px; text-align:center;">
-  <h2 style="color:#c2185b;">Pay with bKash</h2>
-
-  <p>Send your payment to this bKash number:</p>
-
-  <p style="font-size:28px; font-weight:bold; color:#c2185b;">
-    01714073205
-  </p>
-
-  <p style="font-size:18px;">
-    Send it with referral code:
-  </p>
-
-  <p style="font-size:22px; font-weight:bold; color:#c2185b;">
-    SPSC BAGS
-  </p>
-
-  <p>Please use the referral code when sending your payment.</p>
-</div>
-
-    <div class="form-section" id="order">
-
-      <h2>Place Your Order</h2>
-
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLScZQdS0m8DWiNlEjFP0aeV_In5FUllS29SU6_GNBEsVoJdqog/viewform?embedded=true">
-        Loading…
-      </iframe>
-
-    </div>
-
+  <div class="announcement">
+    🎒 SPSC BAGS — Student Style, Everyday Confidence!
   </div>
+
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="#home" aria-label="SPSC Bags home">
+        <span class="brand-icon">🎒</span>
+        <span>SPSC BAGS</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#product">Our Bag</a>
+        <a href="#order">Order</a>
+        <a href="#payment">Payment</a>
+        <a class="btn btn-primary" href="#order">Order Now ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">✨ MADE FOR STUDENT LIFE</span>
+          <h1>Your School Days.<br>Your Style. <span>Your Bag.</span></h1>
+          <p class="hero-description">
+            Make every school day a little more special with SPSC Bags.
+            A student-focused look, a clean design, and an easy ordering process.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#order" class="btn btn-primary">🛍️ Order Your Bag</a>
+            <a href="#product" class="btn btn-outline">Explore the Bag ↓</a>
+          </div>
+
+          <p class="hero-note">💙 Designed around your student lifestyle.</p>
+        </div>
+
+        <div class="hero-visual">
+          <div class="image-frame">
+            <img src="bag.jpeg" alt="SPSC student bag" fetchpriority="high">
+          </div>
+          <div class="floating-label top">🎒 Student Essential</div>
+          <div class="floating-label bottom">⭐ Only ৳600</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Shopping highlights">
+      <div class="container benefit-grid">
+        <div class="benefit">
+          <span class="benefit-icon">🎓</span>
+          <span>Student-Focused Design</span>
+        </div>
+        <div class="benefit">
+          <span class="benefit-icon">📱</span>
+          <span>Easy Online Ordering</span>
+        </div>
+        <div class="benefit">
+          <span class="benefit-icon">💳</span>
+          <span>Convenient bKash Payment</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="product">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">THE SPSC PICK</span>
+          <h2>Meet Your Everyday School Bag</h2>
+          <p>A simple way to show your student style. Check out the bag and place your order online.</p>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="bag.jpeg" alt="SPSC Bags product photo" loading="lazy">
+          </div>
+
+          <div class="product-info">
+            <span class="tag">STUDENT COLLECTION</span>
+            <h3>SPSC Student Bag</h3>
+            <p>
+              Bring your school essentials together with a bag made for your everyday student routine.
+              Please review the product photo before placing your order.
+            </p>
+
+            <div class="price-row">
+              <span class="price">৳600</span>
+              <span class="price-note">Listed price</span>
+            </div>
+
+            <div class="product-actions">
+              <a href="#order" class="btn btn-primary">Order Now →</a>
+              <a href="https://wa.me/8801614073205" target="_blank" rel="noopener noreferrer" class="btn btn-outline">WhatsApp Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section order-section" id="order">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">📝 PLACE YOUR ORDER</span>
+          <h2>Get Your SPSC Bag</h2>
+          <p>Complete the order form below with your correct contact and delivery information.</p>
+        </div>
+
+        <div class="form-shell">
+          <div class="form-top">
+            <div>
+              <h3>SPSC Bags Order Form</h3>
+              <p>Fill in the required details to submit your order.</p>
+            </div>
+            <span class="tag">PRICE: ৳600</span>
+          </div>
+
+          <iframe
+            class="google-form"
+            src="https://docs.google.com/forms/d/e/1FAIpQLScZQdS0m8DWiNlEjFP0aeV_In5FUllS29SU6_GNBEsVoJdqog/viewform?embedded=true"
+            title="SPSC Bags order form"
+            loading="lazy">
+            Loading…
+          </iframe>
+
+          <div class="form-fallback">
+            If the form does not load,
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScZQdS0m8DWiNlEjFP0aeV_In5FUllS29SU6_GNBEsVoJdqog/viewform"
+               target="_blank" rel="noopener noreferrer">open the order form here</a>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="payment">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">💳 PAYMENT DETAILS</span>
+          <h2>Simple Payment Information</h2>
+          <p>Use the contact and payment details below when coordinating your order.</p>
+        </div>
+
+        <div class="payment-grid">
+          <div class="payment-card">
+            <div class="payment-icon">📲</div>
+            <h3>bKash Payment</h3>
+            <p>Use the following bKash number for payment according to your order instructions.</p>
+            <div class="number-box">
+              <span id="bkashNumber">01714073205</span>
+              <button class="copy-btn" type="button" onclick="copyText('bkashNumber', this)">Copy</button>
+            </div>
+          </div>
+
+          <div class="payment-card">
+            <div class="payment-icon">🎁</div>
+            <h3>Referral Code</h3>
+            <p>Use the SPSC Bags referral code wherever it is requested in the ordering process.</p>
+            <div class="number-box">
+              <span id="referralCode">SPSC BAGS</span>
+              <button class="copy-btn" type="button" onclick="copyText('referralCode', this)">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-warning">
+          <strong>⚠️ Please check before paying:</strong>
+          Confirm your order details and follow the payment instructions provided by the seller.
+          Keep your transaction information for reference.
+        </div>
+
+        <div style="text-align:center; margin-top:28px;">
+          <a href="https://wa.me/8801614073205" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            💬 Contact Us on WhatsApp
+          </a>
+          <a href="tel:+8801614073205" class="btn btn-outline" style="margin-left:8px;">
+            📞 Call 01614073205
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" id="faq" style="background:#edf3ff;">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">NEED HELP?</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>A few quick answers to help you order with confidence.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>How much does the SPSC bag cost?</summary>
+            <p>The price displayed on this website is ৳600.</p>
+          </details>
+
+          <details>
+            <summary>How do I place an order?</summary>
+            <p>Use the order form on this page and enter your information carefully. If the form does not load, use the direct form link.</p>
+          </details>
+
+          <details>
+            <summary>How can I contact SPSC Bags?</summary>
+            <p>You can call 01614073205 or contact the same number through WhatsApp.</p>
+          </details>
+
+          <details>
+            <summary>Which bKash number is listed?</summary>
+            <p>The bKash number displayed on this page is 01714073205. Follow the seller's payment instructions before sending money.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">🎒 SPSC BAGS</div>
+          <p>A student-focused bag page with easy ordering and convenient contact options.</p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#product">Our Bag</a>
+            <a href="#order">Place an Order</a>
+            <a href="#payment">Payment Details</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="tel:+8801614073205">Call: 01614073205</a>
+            <a href="https://wa.me/8801614073205" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+            <a href="#payment">bKash: 01714073205</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="year"></span> SPSC Bags. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp"
+     href="https://wa.me/8801614073205"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat with SPSC Bags on WhatsApp"
+     title="Chat on WhatsApp">✆</a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function copyText(elementId, button) {
+      const text = document.getElementById(elementId).textContent.trim();
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () {
+          showCopied(button);
+        }).catch(function () {
+          fallbackCopy(text, button);
+        });
+      } else {
+        fallbackCopy(text, button);
+      }
+    }
+
+    function showCopied(button) {
+      const oldText = button.textContent;
+      button.textContent = "Copied!";
+      setTimeout(function () {
+        button.textContent = oldText;
+      }, 1500);
+    }
+
+    function fallbackCopy(text, button) {
+      const temporaryInput = document.createElement("textarea");
+      temporaryInput.value = text;
+      temporaryInput.style.position = "fixed";
+      temporaryInput.style.opacity = "0";
+      document.body.appendChild(temporaryInput);
+      temporaryInput.select();
+
+      try {
+        const success = document.execCommand("copy");
+        if (success) {
+          showCopied(button);
+        } else {
+          alert("Please copy this manually: " + text);
+        }
+      } catch (error) {
+        alert("Please copy this manually: " + text);
+      }
+
+      temporaryInput.remove();
+    }
+  </script>
 
 </body>
 </html>
-<p>
-  <strong>Send it with referral code: SPSC BAGS</strong>
-</p>
-
-<p class="bkash-note">
-  Please use the referral code "SPSC BAGS"
-  when sending your payment.
-</p>
+```
